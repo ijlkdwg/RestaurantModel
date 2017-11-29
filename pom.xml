@@ -12,6 +12,7 @@
         <module>service</module>
         <module>basicController</module>
         <module>basicUtil</module>
+        <module>basicWeb</module>
     </modules>
     <properties>
         <junit.version>4.12</junit.version>
