@@ -8,11 +8,12 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>dao</module>
-        <module>service</module>
-        <module>basicController</module>
+        <module>basicEntity</module>
         <module>basicUtil</module>
         <module>basicWeb</module>
+        <module>basicDao</module>
+        <module>basicService</module>
+        <module>basicController</module>
     </modules>
     <properties>
         <junit.version>4.12</junit.version>
@@ -20,6 +21,8 @@
         <spring.version>5.0.2.RELEASE</spring.version>
         <mysql.version>6.0.6</mysql.version>
         <log4j.version>2.9.1</log4j.version>
+        <cglib.version>3.2.5</cglib.version>
+        <shiro.version>1.4.0</shiro.version>
     </properties>
 
 <dependencies>
@@ -45,13 +48,7 @@
     </dependency>
     <!--test jar end-->
     <!-- spring jar start-->
-   <!-- <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-framework-bom</artifactId>
-        <version>${spring.version}</version>
-        <type>bom</type>
-        <scope>import</scope>
-    </dependency>-->
+
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-tx</artifactId>
@@ -150,10 +147,18 @@
 
     <!-- sql jar end -->
 
-
-
-
-
+    <!--cglib jar start-->
+    <dependency>
+        <groupId>cglib</groupId>
+        <artifactId>cglib-nodep</artifactId>
+        <version>${cglib.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>cglib</groupId>
+        <artifactId>cglib</artifactId>
+        <version>${cglib.version}</version>
+    </dependency>
+    <!--cglib jar end-->
 
 
 
@@ -192,6 +197,35 @@
         <scope>provided</scope>
     </dependency>
     <!--java servlet end -->
+
+    <!--shiro jar start -->
+
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-core</artifactId>
+        <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-web</artifactId>
+        <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-spring</artifactId>
+        <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-ehcache</artifactId>
+        <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-cas</artifactId>
+        <version>${shiro.version}</version>
+    </dependency>
+    <!--shiro jar end -->
 
 </dependencies>
 <build>

@@ -5,6 +5,7 @@
          id="WebApp_ID" version="3.0">
   <display-name>dao model</display-name>
 
+
   <listener>
     <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
   </listener>
@@ -12,6 +13,9 @@
     <filter-name>log4jServletFilter</filter-name>
     <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
   </filter>
+  <listener>
+    <listener-class>com.ijlkd.restaurant.init.CustomerListener</listener-class>
+  </listener>
   <filter-mapping>
     <filter-name>log4jServletFilter</filter-name>
     <url-pattern>/*</url-pattern>
@@ -20,6 +24,4 @@
     <dispatcher>INCLUDE</dispatcher>
     <dispatcher>ERROR</dispatcher>
   </filter-mapping>
-
-
 </web-app>
